@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagentoHackathon
+ * @package    MagentoHackathon_FastSimpleExport
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software Licence 3.0 (OSL-3.0)
+ * @author     Nils Preuss <nils.preuss@gmx.net>
+ */
+-->
+<config>
+    <modules>
+        <MageHackathon_FastSimpleExport>
+            <version>0.0.1</version>
+        </MageHackathon_FastSimpleExport>
+    </modules>
+
+    <global>
+        <models>
+            <fastsimpleexport>
+                <class>MagentoHackathon_FastSimpleExport_Model</class>
+            </fastsimpleexport>
+        </models>
+        <importexport module="importexport">
+            <export_entities>
+                <order translate="label">
+                    <model_token>fastsimplexport/export_entity_order</model_token>
+                    <label>Category</label>
+                </order>
+            </export_entities>
+        </importexport>
+    </global>
+
+</config>

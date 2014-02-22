@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<MagentoHackathon_FastSimpleExport>
+			<active>true</active>
+			<codePool>community</codePool>
+		</MagentoHackathon_FastSimpleExport>
+	</modules>
+</config>
