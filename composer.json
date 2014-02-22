@@ -1,0 +1,14 @@
+{
+  "name": "MagentoHackathon/FastSimpleExport",
+  "licence": "osl",
+  "type": "magento-module",
+  "description": "Module for export to arraz structure",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "authors":[
+    {"name": "nhp",
+      "email":"nils.preuss@gmx.net"
+    }
+  ]
+}
