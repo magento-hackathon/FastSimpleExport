@@ -20,6 +20,14 @@
                 <class>MagentoHackathon_FastSimpleExport_Model</class>
             </fastsimpleexport>
         </models>
+        <importexport module="importexport">
+            <export_entities>
+                <order translate="label">
+                    <model_token>fastsimplexport/export_entity_order</model_token>
+                    <label>Category</label>
+                </order>
+            </export_entities>
+        </importexport>
     </global>
 
 </config>

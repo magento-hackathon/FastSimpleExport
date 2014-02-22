@@ -16,7 +16,13 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
         $this->setEntity('customer');
         return $this->export();
     }
-
+    public function processOrderExport($filter = null)
+    {
+        $this->setEntity('order');
+        $entityAdapter = Mage::getModel('fastsimpleexport/export_entity_order');
+        $this->setEntityAdapter($entityAdapter);
+        return $this->export();
+    }
     public function export()
     {
         $this->addLogComment(Mage::helper('importexport')->__('Begin export of %s', $this->getEntity()));
