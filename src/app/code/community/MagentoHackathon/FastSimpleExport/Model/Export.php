@@ -5,8 +5,7 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
     public function processProductExport($filter = null)
     {
         $this->setEntity(Mage_Catalog_Model_Product::ENTITY);
-        $entityAdapter = Mage::getModel('fastsimpleexport/export_entity_product');
-        $this->setEntityAdapter($entityAdapter);
+        $this->_getEntityAdapter()->setParameters($this->getFilters());
         return $this->export();
 
     }
@@ -14,6 +13,7 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
     public function processCustomerExport($filter = null)
     {
         $this->setEntity('customer');
+        $this->_getEntityAdapter()->setParameters($this->getFilters());
         return $this->export();
     }
     public function processOrderExport($filter = null)
@@ -49,7 +49,10 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
     {
         return $this->getData('include_payment');
     }
-
+    public function getFilters()
+    {
+        return (array)$this->getData('export_filter');
+    }
     public function getIncludeItems()
     {
         return $this->getData('include_items');
