@@ -1,6 +1,6 @@
 ## FastSimpleExport - Array output for Magento ImportExport
 
-### Export Magento Entities as multidimensional arrays for further
+### Export Magento Entities as multidimensional arrays for general portability
 
 This extension is able to export some entities to a simple multidimensional array for further usage.
 
