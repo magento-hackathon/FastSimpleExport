@@ -20,6 +20,10 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
     {
         $this->setEntity('order');
         $entityAdapter = Mage::getModel('fastsimpleexport/export_entity_order');
+        $entityAdapter->setIncludePayment($this->getIncludePayment());
+        $entityAdapter->setIncludeItems($this->getIncludeItems());
+        $entityAdapter->setIncludeShipment($this->getIncludeShipment());
+        $entityAdapter->setIncludeAddresses($this->getIncludeAddresses());
         $this->setEntityAdapter($entityAdapter);
         return $this->export();
     }
@@ -31,6 +35,24 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
                 ->export();
 
         return $result;
+    }
+
+    public function getIncludeAddresses()
+    {
+        return $this->getData('include_addresses');
+    }
+    public function getIncludeShipment()
+    {
+        return $this->getData('include_shipment');
+    }
+    public function getIncludePayment()
+    {
+        return $this->getData('include_payment');
+    }
+
+    public function getIncludeItems()
+    {
+        return $this->getData('include_items');
     }
 
     protected function _getWriter()
