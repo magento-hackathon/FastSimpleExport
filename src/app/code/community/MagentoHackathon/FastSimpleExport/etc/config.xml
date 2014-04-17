@@ -26,6 +26,10 @@
                     <model_token>fastsimplexport/export_entity_order</model_token>
                     <label>Category</label>
                 </order>
+                <attribute_option translate="label">
+                    <model_token>fastsimpleexport/export_entity_attribute_option</model_token>
+                    <label>Attribute Option</label>
+                </attribute_option>
             </export_entities>
         </importexport>
     </global>
