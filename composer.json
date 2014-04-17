@@ -2,7 +2,7 @@
   "name": "MagentoHackathon/FastSimpleExport",
   "licence": "osl",
   "type": "magento-module",
-  "description": "Module for export to arraz structure",
+  "description": "Module for export to array structure",
   "require": {
     "magento-hackathon/magento-composer-installer": "*"
   },
