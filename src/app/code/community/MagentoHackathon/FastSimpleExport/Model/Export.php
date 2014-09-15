@@ -10,6 +10,14 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
 
     }
 
+    public function processAttributeExport($filter = null)
+    {
+        $this->setEntity('attribute_option');
+        $entityAdapter = Mage::getModel('fastsimpleexport/export_entity_attribute_option');
+        $this->setEntityAdapter($entityAdapter);
+        return $this->export();
+    }
+
     public function processCustomerExport($filter = null)
     {
         $this->setEntity('customer');
@@ -30,6 +38,7 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
     public function export()
     {
         $this->addLogComment(Mage::helper('importexport')->__('Begin export of %s', $this->getEntity()));
+        var_dump(get_class($this->_getEntityAdapter()));
             $result = $this->_getEntityAdapter()
                 ->setWriter($this->_getWriter())
                 ->export();
@@ -65,7 +74,7 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
             $this->_writer = Mage::getModel('fastsimpleexport/export_adapter_array');
                 if (! $this->_writer instanceof MagentoHackathon_FastSimpleExport_Model_Export_Adapter_Abstract) {
                     Mage::throwException(
-                        Mage::helper('importexport')->__('Adapter object must be an instance of %s', 'Mage_ImportExport_Model_Export_Adapter_Abstract')
+                        Mage::helper('importexport')->__('Adapter object must be an instance of %s', 'MagentoHackathon_FastSimpleExport_Model_Export_Adapter_Abstract')
                     );
                 }
             }
