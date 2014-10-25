@@ -26,7 +26,22 @@ $result = $exporter
 ->setIncludeItems(true)
 ->processOrderExport();
 ```
+* Catalog Category Product Positions
+```php
+$exporter = Mage::getModel('fastsimpleexport/export');
+$result = $exporter->processCategoryProductExport();
+```
 
+* Catalogrules
+```php
+$exporter = Mage::getModel('fastsimpleexport/export');
+$result = $exporter->processCatalogruleExport();
+```
+* Cartrules
+```php
+$exporter = Mage::getModel('fastsimpleexport/export');
+$result = $exporter->processCartrulesExport();
+```
 
 ### Filtering
 
