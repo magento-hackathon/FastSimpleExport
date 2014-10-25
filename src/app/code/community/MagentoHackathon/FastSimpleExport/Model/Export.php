@@ -27,6 +27,15 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
         return $this->export();
 
     }
+
+    public function processCartruleExport($filter = null)
+    {
+        $this->setEntity('cartrule');
+        $entityAdapter = Mage::getModel('fastsimpleexport/export_entity_cartrule');
+        $this->setEntityAdapter($entityAdapter);
+        return $this->export();
+    }
+
     public function processAttributeExport($filter = null)
     {
         $this->setEntity('attribute_option');
