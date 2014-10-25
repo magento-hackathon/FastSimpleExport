@@ -10,6 +10,15 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
 
     }
 
+    public function processCategoryProductExport($filter = null)
+    {
+        $this->setEntity('catalog_category');
+        $entityAdapter = Mage::getModel('fastsimpleexport/export_entity_category_product');
+        $entityAdapter->setParameters($this->getFilters());
+        $this->setEntityAdapter($entityAdapter);
+        return $this->export();
+    }
+
     public function processAttributeExport($filter = null)
     {
         $this->setEntity('attribute_option');
@@ -38,7 +47,6 @@ class MagentoHackathon_FastSimpleExport_Model_Export extends Mage_ImportExport_M
     public function export()
     {
         $this->addLogComment(Mage::helper('importexport')->__('Begin export of %s', $this->getEntity()));
-        var_dump(get_class($this->_getEntityAdapter()));
             $result = $this->_getEntityAdapter()
                 ->setWriter($this->_getWriter())
                 ->export();
